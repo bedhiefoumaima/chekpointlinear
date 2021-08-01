@@ -1,0 +1,44 @@
+ALGORITHM calculateurmots
+VAR
+    ph : STRING;
+    p : INTEGER;
+    i:INTEGER;
+    len:INTEGER;//longeur de phrase
+    nbMots, nbvo, nbcara : INTEGER;
+
+BEGIN
+    WHILE (ph[p]<>".") DO
+        set_instructions
+    
+    p = 0
+    WHILE (p < len) DO
+        WHILE (ph[p] == "") DO
+               nbMots = 0
+            if ph[p] <> "":
+                nbMots = 1
+        p = p + 1
+        END_WHILE
+        WHILE (i < len(ph)) DO
+            if ph[i] == " ":
+            nbMots = nbMots + 1
+        i = i + 1
+        END_WHILE
+    END_WHILE
+    j = 0;
+    nbvo=0;
+        WHILE (j < len(ph)) DO
+            if (ph[i] == a ||ph[i] == e||ph[i] == i||ph[i] == o||ph[i] == u||ph[i] == y )
+            nbvo = nbvo + 1;
+        i = i + 1;
+        END_WHILE
+        i=0;
+    FOR i FROM 0 TO len STEP step  DO
+        nbcara=nbcara+1;
+    END_FOR
+    END_WHILE
+    write ("le nombre des mots est",nbMots );
+    write ("le nombre des voyelles est",nbvo );
+    write ("le nombre des caractères est",nbcara );
+
+        
+END

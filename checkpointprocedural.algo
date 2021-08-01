@@ -1,0 +1,51 @@
+//procedure
+PROCEDURE prod (VAR v1, VAR v2  )
+
+VAR
+P:FLOAT
+BEGIN
+IF (length.V1=length.V2) THEN
+ P=(V1[0]V2[0])+(V1[1]V2[1])
+
+
+END_WHILE
+
+
+ALGORITHM Dot product
+VAR
+V1 : ARRAY_OF FLOAT[n];
+V2 : ARRAY_OF FLOAT[n];
+n:= prod (VAR v1, VAR v2  )
+BEGIN
+
+WHILE (n=0) DO
+
+
+    write("ORTHO")
+    
+END
+
+//function
+FUNCTION prod(v1,v2) : INTEGER
+VAR
+    P INTEGER
+BEGIN
+IF (length.V1=length.V2) THEN
+   P=(V1[0]V2[0])+(V1[1]V2[1])
+    RETURN P ;
+END
+
+
+ALGORITHM Dot product
+VAR
+V1 : ARRAY_OF FLOAT[n];
+V2 : ARRAY_OF FLOAT[n];
+BEGIN
+n:= prod (VAR v1, VAR v2  )
+
+WHILE (P=0) DO
+
+
+    write("ORTHO")
+    
+END

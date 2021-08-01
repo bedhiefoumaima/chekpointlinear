@@ -1,0 +1,105 @@
+ALGORITHM checkpoint_algo2 //array methode
+VAR
+ chaine  : STRING ; 
+ set1 : array_name : ARRAY_OF INTEGER[n1];
+ set2 : array_name : ARRAY_OF INTEGER[n2];
+ i,j : INTEGER ;
+ somme1, somme2 : INTEGER:=0 ;
+
+ 
+BEGIN
+    //lire la longeur des tableaux
+    REPEAT
+        write('veuillez saisir la longueur du premier tableau');
+        read(n1);
+    UNTIL (n1>0)
+       REPEAT
+        write('veuillez saisir la longueur du deuxième tableau');
+        read(n2);
+    UNTIL (n2>0)
+    //lire les deux tableaux
+    for (i=0;i<=n1;i++)
+    {
+        read set1[i];
+    }
+    for (j=0;j<=n1;j++)
+    {
+        read set2[j];
+    }
+    //tester les élément de tableau (distincts)
+    for (i=0;i<=n1;i++)
+    {
+        
+    IF (set1[i]<>set2[j]) THEN
+        
+        {
+            somme=somme+set1[i];
+        }
+    
+    END_IF
+    }
+     for (j=0;j<=n1;j++)
+        {
+            IF (set2[j]<>set1[i]) THEN
+                somme=somme+set2[j];
+
+            END_IF
+        }
+        write('la somme des chiffres différents est  ', somme1);
+
+            //tester les élément de tableau (en commun)
+               for (i=0;i<=n1;i++)
+    {
+        
+    IF (set1[i]==set2[j]) THEN
+        
+        {
+            somme1=somme1+set1[i];
+        }
+    
+    END_IF
+    }
+     for (j=0;j<=n1;j++)
+        {
+            IF (set2[j]==set1[i]) THEN
+                somme2=somme2+set2[j];
+
+            END_IF
+        }
+        write('la somme des chiffres en commun est  ', somme2);
+
+END
+
+ALGORITHM hash_table_methode
+VAR
+  set1 : array_name : ARRAY_OF INTEGER[n1];
+  set2 : array_name : ARRAY_OF INTEGER[n2];
+  hash: HASH_TABLE<INTEGER,INTEGER> ;
+  count : INTEGER ;
+  somme :INTEGER ;
+
+BEGIN
+    FOR i FROM 0 TO N1-1 STEP step  DO
+        hash.insert(set1[i],1)
+    END_FOR
+    FOR i FROM 0 TO n2-1 STEP step  DO
+        IF (hash.lookup(set2[i]=TRUE)) THEN
+            count :=hash.get(set2[i])
+            hash.insert(set2[i],count+1)
+        ELSE
+            hash.insert(set2[i],1)
+        END_IF
+    END_FOR 
+    //somme des elements distincts
+    FOR i FROM 0 TO n-1 STEP step  DO
+        IF (hash.get(set1[i])=1) THEN
+            somme=somme+set1[i];
+        END_IF
+    END_FOR  
+    //somme des elements en commun
+    FOR i FROM 0 TO n-1 STEP step  DO
+        IF (hash.get(set1[i])>1) THEN
+            somme1=somme1+set1[i];
+        END_IF
+    END_FOR
+END
